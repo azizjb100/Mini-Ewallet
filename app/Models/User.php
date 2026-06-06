@@ -11,7 +11,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 // PERBAIKAN: Tambahkan 'balance' dan 'transaction_pin' ke dalam daftar Fillable
-#[Fillable(['name', 'email', 'password', 'balance', 'transaction_pin'])]
+#[Fillable(['name', 'email', 'password', 'balance', 'transaction_pin', 'ewallet_number'])]
 // PERBAIKAN: Sembunyikan 'transaction_pin' agar tidak bocor ke frontend saat data user dipanggil
 #[Hidden(['password', 'remember_token', 'transaction_pin'])]
 class User extends Authenticatable
@@ -29,7 +29,8 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
-            'balance' => 'decimal:2', // Opsional: Memastikan nominal balance terbaca sebagai angka desimal/float yang presisi
+            'balance' => 'decimal:2',
+            'ewallet_number' => 'string',
         ];
     }
 }

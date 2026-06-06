@@ -1,58 +1,368 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 💳 Mini E-Wallet Application
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="350" alt="Laravel Logo">
 </p>
 
-## About Laravel
+<p align="center">
+  <strong>Aplikasi Dompet Digital Modern Menggunakan Laravel 11, Vue 3, Inertia.js, Pinia, dan Tailwind CSS</strong>
+</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<p align="center">
+  Mini E-Wallet merupakan aplikasi simulasi dompet digital yang dirancang dengan konsep modern seperti OVO, DANA, dan GoPay, dilengkapi fitur transfer saldo, top up, keamanan PIN transaksi, serta pengalaman pengguna berbasis Single Page Application (SPA).
+</p>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 📖 Tentang Aplikasi
 
-## Learning Laravel
+Mini E-Wallet adalah aplikasi dompet digital berbasis web yang dibangun untuk mensimulasikan proses transaksi keuangan elektronik secara aman dan responsif.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Aplikasi ini dikembangkan menggunakan kombinasi teknologi:
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Laravel 11 sebagai Backend Framework
+- Vue 3 sebagai Frontend Framework
+- Inertia.js sebagai penghubung Backend dan Frontend
+- Pinia untuk State Management
+- Tailwind CSS untuk antarmuka modern
+- MySQL sebagai Database Management System
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+Dengan arsitektur tersebut, aplikasi mampu memberikan pengalaman pengguna yang cepat tanpa melakukan _full page reload_ seperti aplikasi web tradisional.
 
-## Agentic Development
+---
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+## ✨ Fitur Utama
 
-```bash
-composer require laravel/boost --dev
+### 👤 Manajemen Pengguna
 
-php artisan boost:install
+- Registrasi Akun
+- Login & Logout
+- Edit Profil Pengguna
+- Ubah Password
+- Pengaturan PIN Transaksi
+
+### 💳 Manajemen Dompet Digital
+
+- Pembuatan Nomor E-Wallet Otomatis
+- Dashboard Informasi Saldo
+- Informasi Nomor Akun E-Wallet
+- Monitoring Saldo Pengguna
+
+### 💸 Transfer Saldo
+
+- Transfer Antar Pengguna
+- Validasi Nomor E-Wallet Tujuan
+- Verifikasi Nama Penerima
+- Konfirmasi Nominal Transfer
+- Validasi PIN Sebelum Transaksi
+
+### 🏦 Top Up Saldo
+
+- Simulasi Top Up Virtual Account
+- Simulasi Pembayaran QRIS
+- Penambahan Saldo Instan
+
+### 🔐 Keamanan Sistem
+
+- PIN Transaksi 6 Digit
+- Hashing PIN Menggunakan Laravel Hash
+- Validasi Server Side
+- Proteksi Saldo dari Double Spending
+- Database Transaction & Row Locking
+
+### 🎨 Antarmuka Modern
+
+- Responsive Design
+- Mobile Friendly
+- SPA (Single Page Application)
+- Dashboard Interaktif
+- User Experience Modern
+
+---
+
+## 🛠️ Teknologi yang Digunakan
+
+### Backend
+
+| Teknologi | Versi  |
+| --------- | ------ |
+| PHP       | 8.2+   |
+| Laravel   | 11     |
+| MySQL     | 8+     |
+| Composer  | Latest |
+
+### Frontend
+
+| Teknologi    | Versi  |
+| ------------ | ------ |
+| Vue.js       | 3      |
+| Inertia.js   | Latest |
+| Pinia        | Latest |
+| Tailwind CSS | Latest |
+| Vite         | Latest |
+
+---
+
+## 📂 Struktur Direktori
+
+```text
+app/
+├── Http/
+│   ├── Controllers/
+│   │   ├── Auth/
+│   │   │   └── RegisteredUserController.php
+│   │   ├── ProfileController.php
+│   │   └── WalletController.php
+│   └── Middleware/
+│       └── HandleInertiaRequests.php
+│
+├── Models/
+│   └── User.php
+│
+└── Services/
+    └── TransferService.php
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+---
 
-## Contributing
+## 🚀 Instalasi Aplikasi
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 1. Clone Repository
 
-## Code of Conduct
+```bash
+git clone https://github.com/username/mini-ewallet.git
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+cd mini-ewallet
+```
 
-## Security Vulnerabilities
+### 2. Install Dependensi Backend
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+composer install
+```
 
-## License
+### 3. Install Dependensi Frontend
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+npm install
+```
+
+### 4. Konfigurasi Environment
+
+Salin file environment:
+
+```bash
+cp .env.example .env
+```
+
+Sesuaikan konfigurasi database:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=mini_ewallet
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Generate application key:
+
+```bash
+php artisan key:generate
+```
+
+### 5. Migrasi Database
+
+```bash
+php artisan migrate
+```
+
+---
+
+## ▶️ Menjalankan Aplikasi
+
+### Terminal 1 - Menjalankan Laravel
+
+```bash
+php artisan serve
+```
+
+Akses aplikasi melalui:
+
+```text
+http://127.0.0.1:8000
+```
+
+### Terminal 2 - Menjalankan Vite
+
+```bash
+npm run dev
+```
+
+Pastikan kedua terminal berjalan secara bersamaan.
+
+---
+
+## 🔄 Alur Transfer Saldo
+
+```text
+Input Nomor E-Wallet
+          │
+          ▼
+Input Nominal Transfer
+          │
+          ▼
+Validasi Akun Tujuan
+          │
+          ▼
+Tampilkan Data Penerima
+          │
+          ▼
+Konfirmasi Transfer
+          │
+          ▼
+Input PIN Transaksi
+          │
+          ▼
+Proses Transfer
+          │
+          ▼
+Transfer Berhasil
+```
+
+---
+
+## 🔐 Implementasi Keamanan
+
+### Keamanan PIN
+
+PIN transaksi disimpan menggunakan hashing sehingga tidak dapat dibaca kembali dari database.
+
+```php
+Hash::make($request->pin);
+
+Hash::check($request->pin, $user->transaction_pin);
+```
+
+### Proteksi Transaksi Keuangan
+
+Sistem menggunakan Database Transaction dan Row Locking untuk mencegah race condition dan double spending.
+
+```php
+DB::transaction(function () use ($sender, $receiver, $amount) {
+
+    $sender = User::lockForUpdate()->find($sender->id);
+
+    $receiver = User::lockForUpdate()->find($receiver->id);
+
+    $sender->balance -= $amount;
+
+    $receiver->balance += $amount;
+
+    $sender->save();
+
+    $receiver->save();
+});
+```
+
+Keuntungan pendekatan ini:
+
+- Mencegah Double Spending
+- Mencegah Race Condition
+- Menjaga Konsistensi Saldo
+- Aman untuk Transaksi Bersamaan
+
+---
+
+## 🎯 Keputusan Desain Sistem
+
+### Nomor E-Wallet
+
+Setiap pengguna mendapatkan nomor akun otomatis:
+
+- Panjang 12 Digit
+- Format Numerik
+- Prefix Vendor: 88
+- Bersifat Unik
+
+Contoh:
+
+```text
+881234567890
+```
+
+### Penyimpanan Saldo
+
+Saldo pengguna disimpan pada kolom:
+
+```text
+users.balance
+```
+
+Pendekatan ini dipilih agar proses pembacaan saldo pada dashboard lebih cepat dan sederhana.
+
+---
+
+## 📸 Screenshot Aplikasi
+
+Tambahkan screenshot pada folder:
+
+```text
+screenshots/
+├── login.png
+├── register.png
+├── dashboard.png
+├── transfer.png
+└── topup.png
+```
+
+Lalu tampilkan pada README:
+
+```markdown
+## Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+## Transfer
+
+![Transfer](screenshots/transfer.png)
+```
+
+---
+
+## 👨‍💻 Tujuan Pengembangan
+
+Proyek ini dibuat untuk mempelajari dan mengimplementasikan:
+
+- Laravel Service Pattern
+- Vue 3 Composition API
+- Inertia.js SPA Architecture
+- State Management Menggunakan Pinia
+- Database Transaction Handling
+- Sistem Transaksi Finansial
+- Pengembangan Aplikasi Web Modern
+
+---
+
+## 📄 Lisensi
+
+Proyek ini menggunakan lisensi MIT dan dapat digunakan untuk kebutuhan pembelajaran maupun pengembangan lebih lanjut.
+
+---
+
+## 👨‍💻 Pengembang
+
+**Aziz JB**
+
+Keahlian:
+
+- Laravel Development
+- Backend Development
+- Database Design
+- SQL Server
+- PostgreSQL
+- MySQL
+- Query Optimization
+- Database Administration (DBA)
+- Data Engineering
